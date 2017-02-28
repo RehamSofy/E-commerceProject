@@ -21,7 +21,7 @@ public class CustomerOperations implements CustomerMethod{
 		
 		    ArrayList<Product> products=new ArrayList<Product>();
 		    UtilClass uc=new UtilClass();
-			ResultSet resultSet=uc.getResultSet("select * from product where Price='"+searchType+"'or Name='"+searchType+"'or CategoryName='"+searchType+"'");
+			ResultSet resultSet=uc.getResultSet("select * from product where Price='"+searchType+"'or Name='"+searchType.toLowerCase()+"'or CategoryName='"+searchType.toLowerCase()+"'");
 		  
 		    try {
 	    		

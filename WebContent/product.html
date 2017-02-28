@@ -191,25 +191,13 @@
 					<div class="login-search">	    
 						<form action="SearchingServlet" method="post">
 						<input type="submit" value="" > <!-- button searching -->
-						<input type="text" id="search"  name="searching" onkeypress="keyListener()" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
+						<input type="text" id="search"  name="searching"  value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
 					    </form>
 					</div>
 					<p>Shopin</p>
 				</div>				
 			</div>
-			<!-- key listener -->
-			<script>
-               function keyListener() {
-            	  
-            	   var srchdata = document.getElementById('search').value; 
-                    
-                   if(srchdata == ""){}
-                   else{
-                      // document.location.href="Yui";    
-                   }  
-                     
-                   }
-          </script>
+			
           
 		 <script>
 			$(document).ready(function() {
