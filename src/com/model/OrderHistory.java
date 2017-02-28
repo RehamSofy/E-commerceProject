@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class OrderHistory implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int idOrderHistory;
     private int idProductOrder;
 	private int idUser;

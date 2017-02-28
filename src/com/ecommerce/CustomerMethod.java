@@ -1,14 +1,17 @@
 package com.ecommerce;
 
+import java.util.ArrayList;
+
 import com.model.Product;
 
 
 
 public interface CustomerMethod {
 	
+	
+	ArrayList<Product> searchProducts(String searchType);
+	
 	void viewAllProducts(Product product);
-	Product searchProducts(String productName);
-	Product searchProducts(double price);
 	boolean addToShoppingCart(Product product);
 	boolean removeFromShoppingCart(Product product);
 	boolean buyProduct(String Creditcard,Product product);

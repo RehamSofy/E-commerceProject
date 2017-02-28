@@ -4,7 +4,11 @@ import java.io.Serializable;
 
 public class shoppingcard implements Serializable{
 	
-	 private int iduser;
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int iduser;
 	 private int idproduct;
 	 
 	 public shoppingcard(){

@@ -3,6 +3,11 @@ package com.model;
 public class CategoryProduct implements java.io.Serializable {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String ProductName;
 	private String ProductDesc;
 	
