@@ -67,6 +67,7 @@ public class UtilClass implements DBIntializer{
  	        }  	 
  	     return resultSet;
   }
+<<<<<<< HEAD
     public void runInsertQuery(String query,Object data) {  
    	 
 	    try{
@@ -114,6 +115,26 @@ public class UtilClass implements DBIntializer{
              Logger.getLogger(Product.class.getName()).log(Level.SEVERE, null, ex);
          }	
     }
+=======
+    
+    public void removeQuery(String query){
+ 	   try{
+ 	    	  Connection con = getConnection();
+ 	          preparedStatement = con.prepareStatement(query);
+ 	         
+ 		      preparedStatement.executeUpdate();
+ 	               
+ 	       } catch (SQLException e) {
+ 		          System.out.println("SQLException: - " + e);
+ 		          e.printStackTrace();
+ 	            }	   
+ 	   
+ 	   
+ 	   
+    }
+   
+  
+>>>>>>> 85540a458e246683518df3b78a8e66e7f57f4689
    
   /*public int generateId(String query){
 	  

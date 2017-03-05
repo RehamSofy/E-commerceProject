@@ -306,9 +306,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Edit profile</h1>
+		<h1>Add product</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label> Edit profile </h2>
+		<h2><a href="index.html">Home</a><label>/</label> Add product </h2>
 	</div>
 	<%!ArrayList <String> cat = new ArrayList <String>() ; %>
 	<%Admin admin = new Admin(); %>

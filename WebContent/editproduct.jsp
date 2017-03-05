@@ -3,13 +3,13 @@ Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
+
 -->
-<!DOCTYPE html>
 <%@page import="com.controller.Admin"%>
+<%@page import="com.model.Product"%>
+<%@page import="java.util.ArrayList"%>
 
-
-<%@ page import="java.util.ArrayList" %>
-
+<!DOCTYPE html>
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
@@ -306,41 +306,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Edit profile</h1>
+		<h1>Edit product</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label> Edit profile </h2>
+		<h2><a href="index.html">Home</a><label>/</label> Edit product </h2>
 	</div>
+</div>
+</br>
+</br>
+<div>
+
 	<%!ArrayList <String> cat = new ArrayList <String>() ; %>
 	<%Admin admin = new Admin(); %>
 	<%  cat = admin.viewCategory(); %>
 
-<!--login-->
-<div class="container">
-		<div class="login">
-			<form  action = "AddproductServlet">
-			<div class="col-md-6 login-do">
-			<div class="login-mail">
-					<input type="text" placeholder="ID" required="" name= "id">
-					<!-- <i  class="glyphicon glyphicon-user"></i> -->
-				</div>
-				<div class="login-mail">
-					<input type="text" placeholder="Name" required="" name ="name">
-					<!-- <i  class="glyphicon glyphicon-phone"></i> -->
-				</div>
-				<div class="login-mail">
-					<input type="text" placeholder="Price" required="" name="price">
-					<!--  <i  class="glyphicon glyphicon-envelope"></i>-->
-				</div>
-				<div class="login-mail">
-					<input type="text" placeholder="Quantity" required="" name = "quantity">
-					<!-- <i class="glyphicon glyphicon-lock"></i> -->
-				</div>
-				
-						
-					<select name="category">
+<% ArrayList<Product> data =( ArrayList) request.getAttribute("edittData") ;%>
+<form action="updateProduct">
+<table align ="center" >
+
+<%
+for(int count =0; count<data.size();count++){
+	%>
+	<tr>
+	<td><p>ID</p></td>
+	<td><input type="text" name="id" value=<%=data.get(count).getId() %>>  </td>
+	</tr>
+	<tr>
+	<td><p>Price</p></td>
+   <td> <input type="text" name="price" value=<%=data.get(count).getPrice()  %>> </td>
+   </tr>
+   <tr>
+   <td><p>Name</p></td>
+  <td><input type="text" name="name" value=<%=data.get(count).getProductName()  %>> </td>
+  </tr>
+  <tr>
+  <td><p>Quantity</p></td>
+  <td> <input type="text" name="quantity" value=<%=data.get(count).getQuantity() %>>  </td>
+  
+  </tr>
+   <tr>
+  <td><p>Category Name</p></td>
+  <td>
+  <select name="category">
 					<option selected="true" disabled="true"> Category </option>
 					<%
 					for(int i =0; i<cat.size();i++ ){
+						if(cat.get(i).equals(data.get(count).getProductCategory() )){
+							%>
+							
+							<option selected="selected"> <%= cat.get(i) %></option>
+						<%}
 						
 						%>
 						<option> <%= cat.get(i) %></option>
@@ -352,26 +366,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					</select>
 					
-					
-					</div>
-				<!--   <a class="news-letter " href="#">
-						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-					   </a>  --> 
-				<label class="hvr-skew-backward">
-					<input type="submit" value="Submit">
-				</label>
-			
-			</div>
-			
-		</form>
-			
-			<!--  <div class="clearfix"> </div>-->
-			
-		</div>
+  </td>
+  
+ 
+	
+
+	</tr>
+				
+				
+	
+	
+	
+   <% }%>
+
+
+<tr>
+<td></td>
+<td><input type="submit" value="Update" name="update"></td>
+
+</tr>
+
+
+
+</table>
+
+</form>
 
 </div>
 
-<!--//login-->
+
+
+</br>
+</br>
+
 
 		<!--brand-->
 		<div class="container">
