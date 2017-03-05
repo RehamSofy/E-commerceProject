@@ -1304,13 +1304,13 @@ a.at-in {
   cursor: pointer;
   width: 28px;
   height: 28px;
-  position: absolute;
-  right: 5px;
-  bottom: 10px;
+  
+  
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
+  
 }
 /*--//checkout--*/
 /*--wish--*/
@@ -1757,7 +1757,7 @@ th {
     font-size: 1em;
 }
 .close1, .close2, .close3 {
-    bottom: 3px;
+   
 }
 .check-out {
     padding: 4em 0em 0;

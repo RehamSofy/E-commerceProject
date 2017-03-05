@@ -20,7 +20,7 @@ public class Person implements Serializable{
 	private double creditLimit;
 	private String creditNumber;
 	private String address;
-	private boolean isCustomer;
+	private int isCustomer;
 	private String phoneNumber;	
 	private ArrayList<OrderHistory> orderHistory;
 	private ArrayList<Product> product;
@@ -30,7 +30,14 @@ public class Person implements Serializable{
 	public Person(){
 		
 	}
+  
+	public int getIsCustomer() {
+		return isCustomer;
+	}
 
+	public void setIsCustomer(int isCustomer) {
+		this.isCustomer = isCustomer;
+	}
 
 	public ArrayList<OrderHistory> getOrderHistory() {
 		return orderHistory;
@@ -91,6 +98,7 @@ public class Person implements Serializable{
 
 	public Date getBirthday() {
 		return birthday;
+		
 	}
 
 
@@ -148,15 +156,6 @@ public class Person implements Serializable{
 		this.address = address;
 	}
 
-
-	public boolean isCustomer() {
-		return isCustomer;
-	}
-
-
-	public void setCustomer(boolean isCustomer) {
-		this.isCustomer = isCustomer;
-	}
 
 
 	public String getPhoneNumber() {

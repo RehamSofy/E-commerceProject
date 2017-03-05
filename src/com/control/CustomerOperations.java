@@ -4,12 +4,15 @@ package com.control;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import com.ecommerce.CustomerMethod;
+import com.model.Contact;
 import com.model.Product;
 import com.util.UtilClass;
 
 public class CustomerOperations implements CustomerMethod{
 
+	UtilClass uc=new UtilClass();
 	@Override
 	public void viewAllProducts(Product product) {
 		
@@ -20,8 +23,7 @@ public class CustomerOperations implements CustomerMethod{
 	public ArrayList<Product> searchProducts(String searchType)  {
 		
 		    ArrayList<Product> products=new ArrayList<Product>();
-		    UtilClass uc=new UtilClass();
-			ResultSet resultSet=uc.getResultSet("select * from product where Price='"+searchType+"'or Name='"+searchType.toLowerCase()+"'or CategoryName='"+searchType.toLowerCase()+"'");
+			ResultSet resultSet=uc.getResultSet("select * from product where Price='"+searchType+"'or Name='"+searchType+"'or CategoryName='"+searchType+"'");
 		  
 		    try {
 	    		
@@ -33,7 +35,7 @@ public class CustomerOperations implements CustomerMethod{
 					obj.setProductName(resultSet.getString("Name"));
 					obj.setQuantity(resultSet.getInt("Quantity"));
 					obj.setProductCategory(resultSet.getString("CategoryName"));
-					obj.setImage(resultSet.getBlob("Image"));
+					//obj.setImage(resultSet.getBlob("Image"));
 					products.add(obj);	
 				}
 	    	 
@@ -44,6 +46,9 @@ public class CustomerOperations implements CustomerMethod{
 				
 				e.printStackTrace();
 			}
+		    catch(NullPointerException ne){
+		    	
+		    }
 			   
 		return products;
 	}
@@ -80,6 +85,12 @@ public class CustomerOperations implements CustomerMethod{
 
 	@Override
 	public void reviewOrderHistory(int iduser) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void contactUS(Contact con) {
 		// TODO Auto-generated method stub
 		
 	}

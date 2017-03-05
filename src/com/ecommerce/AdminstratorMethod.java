@@ -1,18 +1,19 @@
 package com.ecommerce;
 
+import java.util.ArrayList;
+
 import com.model.Product;
 import com.model.Person;
 
 public interface AdminstratorMethod {
 	
-    boolean addNewProduct(Product myProduct);  
+    void addNewProduct(Product myProduct);  
+    boolean removeProduct(int id);
+    public void updateProduct(Product myProduct, int id);
+    public void ViewProduct(Product myProduct);
+	ArrayList<Person> viewAccounts();
+	void removeProfile(int id);
 	
-    boolean removeProduct(Product myProduct);
-    
-	boolean removePriceQuantity(Double price,int quantity);
 	
-	boolean editPriceQuantity(Double price,int quantity);
-	
-	Person reviewAllProfile();
 
 }

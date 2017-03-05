@@ -1,12 +1,17 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+
+-->
+<%@page import="com.model.Product"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@page import="com.model.Product"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Search</title>
+<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -46,9 +51,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 		</script>
 <!---//End-rate---->
-<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
 </head>
-<body>	
+<body>
 <!--header-->
 <div class="header">
 <div class="container">
@@ -66,7 +70,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="register.html">Register</a></li>
 						<li><a href="checkout.html">Checkout</a></li>
 					</ul>
-		</div>
+				</div>
+				
 			<div class="col-sm-5 header-social">		
 					<ul >
 						<li><a href="#"><i></i></a></li>
@@ -74,18 +79,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><i class="ic2"></i></a></li>
 						<li><a href="#"><i class="ic3"></i></a></li>
 						<li><a href="#"><i class="ic4"></i></a></li>
-					</ul>		
+					</ul>
+					
 			</div>
-			<div class="clearfix"> </div>
+				<div class="clearfix"> </div>
 		</div>
-	</div>
+		</div>
 		
 		<div class="container">
 		
 			<div class="head-top">
 			
 		 <div class="col-sm-8 col-md-offset-2 h_menu4">
-			 <nav class="navbar nav_bottom" role="navigation">
+				<nav class="navbar nav_bottom" role="navigation">
  
  <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header nav_2">
@@ -96,15 +102,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <span class="icon-bar"></span>
       </button>
      
-  </div> 
+   </div> 
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
             <li><a class="color" href="index.html">Home</a></li>
             
-    		<li class="dropdown mega-dropdown active">
+    	<li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
-				<div class="dropdown-menu ">
+				<div class="dropdown-menu">
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
@@ -113,7 +119,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><a href="product.html">Accessories</a></li>
 										<li><a href="product.html">Bags</a></li>
 										<li><a href="product.html">Caps & Hats</a></li>
-										<li><a href="product.html">Hoodies & Sweatshirts</a></li>			
+										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
+										
 									</ul>	
 							</div>							
 						</div>
@@ -164,9 +171,75 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"></div>
 					</div>                  
 				</div>				
-			</li>			
+			</li>
+			<li class="dropdown mega-dropdown active">
+			    <a class="color2" href="#" class="dropdown-toggle" data-toggle="dropdown">Men<span class="caret"></span></a>				
+				<div class="dropdown-menu mega-dropdown-menu">
+                    <div class="menu-top">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Submenu1</h4>
+									<ul>
+										<li><a href="product.html">Accessories</a></li>
+										<li><a href="product.html">Bags</a></li>
+										<li><a href="product.html">Caps & Hats</a></li>
+										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
+										
+									</ul>	
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Submenu2</h4>
+								<ul>
+										<li><a href="product.html">Jackets & Coats</a></li>
+										<li><a href="product.html">Jeans</a></li>
+										<li><a href="product.html">Jewellery</a></li>
+										<li><a href="product.html">Jumpers & Cardigans</a></li>
+										<li><a href="product.html">Leather Jackets</a></li>
+										<li><a href="product.html">Long Sleeve T-Shirts</a></li>
+									</ul>	
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Submenu3</h4>
+								
+<ul>
+										<li><a href="product.html">Shirts</a></li>
+										<li><a href="product.html">Shoes, Boots & Trainers</a></li>
+										<li><a href="product.html">Sunglasses</a></li>
+										<li><a href="product.html">Sweatpants</a></li>
+										<li><a href="product.html">Swimwear</a></li>
+										<li><a href="product.html">Trousers & Chinos</a></li>
+										
+									</ul>	
+								
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Submenu4</h4>
+								<ul>
+									<li><a href="product.html">T-Shirts</a></li>
+									<li><a href="product.html">Underwear & Socks</a></li>
+									<li><a href="product.html">Vests</a></li>
+									<li><a href="product.html">Jackets & Coats</a></li>
+									<li><a href="product.html">Jeans</a></li>
+									<li><a href="product.html">Jewellery</a></li>
+								</ul>	
+							</div>							
+						</div>
+						<div class="col1 col5">
+						<img src="images/me1.png" class="img-responsive" alt="">
+						</div>
+						<div class="clearfix"></div>
+					</div>                  
+				</div>				
+			</li>
 			<li><a class="color3" href="product.html">Sale</a></li>
 			<li><a class="color4" href="404.html">About</a></li>
+            <li><a class="color5" href="typo.html">Short Codes</a></li>
             <li ><a class="color6" href="contact.html">Contact</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
@@ -180,13 +253,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 				</a></li>
 				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
-				</ul>
+					</ul>
 					<div class="cart box_1">
 						<a href="checkout.html">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span></div>
-							<img src="images/cart.png" alt=""/>
-					   </h3></a>
+							<img src="images/cart.png" alt=""/></h3>
+						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
 					</div>
@@ -199,17 +272,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
 			<div id="small-dialog" class="mfp-hide">
-				<div class="search-top">
-					<div class="login-search">	    
-						<form action="SearchingServlet" method="get">
-						<input type="submit" value="" > <!-- button searching -->
-						<input type="text" id="search"  name="searching"  value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
-					    </form>
+				<div class="login-search">
+					<div class="login">
+						<input type="submit" value="">
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
 					</div>
 					<p>Shopin</p>
 				</div>				
 			</div>
-          
 		 <script>
 			$(document).ready(function() {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -235,142 +305,105 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Products</h1>
+		<h1> product</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Products</h2>
+		<h2><a href="index.html">Home</a><label>/</label> product </h2>
 	</div>
 </div>
-<!--content-->
-	<div class="product">
-			<div class="container">
-			<div class="col-md-9">
-				<div class="mid-popular">
-<% 
-     ArrayList<Product> products=(ArrayList<Product>) request.getAttribute("productList");
-     for(int i=0;i<products.size();++i){	 	
-     String path="images/"+products.get(i).getId()+".jpg";
-%>
-	
-					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-					<img src="<%=path%>" class="img-responsive" alt="">		
-					<div class="zoom-icon ">
-						<a class="picture" href="<%=path%>" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-					</div>
-					</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span><%=products.get(i).getProductCategory()%></span>
-							<h6><a href="single.html"><%=products.get(i).getProductName()%></a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p>Price:  <%=products.get(i).getPrice()%></p>
-								<br/>
-								<p>quantity:  <%=products.get(i).getQuantity()%></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>	
-								<div class="clearfix"></div>
-							</div>	
-						</div>
-					</div>
-					</div>
-	                							
-<%} %>							 
-                 </div>	
-					</div>
-				<div class="col-md-3 product-bottom">
-			<!--categories-->
-				<div class=" rsidebar span_1_of_left">
-						<h4 class="cate">Categories</h4>
-							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Men </a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-							<li class="item2"><a href="#">Women </a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-							<li class="item3"><a href="#">Kids</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-							<li class="item4"><a href="#">Accessories</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-									
-							<li class="item4"><a href="#">Shoes</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				<!--initiate accordion-->
-						<script type="text/javascript">
-							$(function() {
-							    var menu_ul = $('.menu-drop > li > ul'),
-							           menu_a  = $('.menu-drop > li > a');
-							    menu_ul.hide();
-							    menu_a.click(function(e) {
-							        e.preventDefault();
-							        if(!$(this).hasClass('active')) {
-							            menu_a.removeClass('active');
-							            menu_ul.filter(':visible').slideUp('normal');
-							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-							        } else {
-							            $(this).removeClass('active');
-							            $(this).next().stop(true,true).slideUp('normal');
-							        }
-							    });
-							
-							});
-						</script>
-<!--//menu-->
-  				 												
-		</div>
-			<div class="clearfix"></div>
-					</div>
-					</div>
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+</br>
+</br>
+<div>
+<script type="text/javascript">
+function deleteProduct(id){
+	url ="Deleteproduct";
+	window.location.href="http://localhost:8084/E-commerceProject/"+url+"?id="+id;
 
-	    <script src="js/simpleCart.min.js"> </script>
-             <!-- slide -->
-        <script src="js/bootstrap.min.js"></script>
-             <!--light-box-files -->
-		<script src="js/jquery.chocolat.js"></script>
-		<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
-		<!--light-box-files -->
-		<script type="text/javascript" charset="utf-8">
-		$(function() {
-			$('a.picture').Chocolat();
-		});
-		</script>	
-     <!--//footer-->
+	
+}
+</script>
+
+<script type="text/javascript">
+function editProduct(id){
+	url ="editProduct";
+	window.location.href="http://localhost:8084/E-commerceProject/"+url+"?id="+id;
+
+	
+}
+
+
+
+
+</script>
+<% ArrayList<Product> data =( ArrayList) request.getAttribute("productData") ;%>
+
+<table align ="center" border="10px">
+<tr>
+<td><p>ID</p></td>
+<td><p>Price</p></td>
+<td><p>Name</p></td>
+<td><p>Quantity</p></td>
+<td><p>Category Name</p></td>
+
+<td><p>Delete</p></td>
+<td><p>Edit</p></td>
+</tr>
+<%
+for(int count =0; count<data.size();count++){
+	%>
+	<tr>
+	<td><%= data.get(count).getId() %> </td>
+   <td><%= data.get(count).getPrice() %> </td>
+  <td><%= data.get(count).getProductName() %> </td>
+				<td><%= data.get(count).getQuantity() %> </td>
+				<td><%= data.get(count).getProductCategory() %> </td>
+				
+				<td>   <input type="submit" value="Delete" name="Delete" onclick="deleteProduct(<%= data.get(count).getId() %>)">  </td>
+	
+				<td>  <input type="submit" value="Edit" name="Edit" onclick="editProduct(<%= data.get(count).getId() %>)">   </td>
+	
+	
+	
+	
+   <% }%>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+		<!--brand-->
+		<div class="container">
+			<div class="brand">
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic1.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic2.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic3.png" class="img-responsive" alt="">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			</div>
+			<!--//brand-->
+	
+	<!--//content-->
+		<!--//footer-->
 	<div class="footer">
 	<div class="footer-middle">
 				<div class="container">
@@ -384,11 +417,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul class=" in">
 							<li><a href="404.html">About</a></li>
 							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="#">Returns</a></li>
+							<li><a href="contact.html">Site Map</a></li>
+						</ul>
+						<ul class="in in1">
 							<li><a href="#">Order History</a></li>
 							<li><a href="wishlist.html">Wish List</a></li>
 							<li><a href="login.html">Login</a></li>
 						</ul>
-						
 						<div class="clearfix"></div>
 					</div>
 					<div class="col-md-3 footer-middle-in">
@@ -421,13 +457,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 201y Shopin. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+					<p class="footer-class">&copy; 2016 Shopin. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
 		<!--//footer-->
-     
- 						
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+	<script src="js/simpleCart.min.js"> </script>
+<!-- slide -->
+<script src="js/bootstrap.min.js"></script>
+ 
 </body>
 </html>

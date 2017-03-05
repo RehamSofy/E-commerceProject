@@ -10,7 +10,11 @@ public interface PersonalMethod {
 	
 	boolean editProfile(Person data);
 	
-	boolean logIn(LoginDto data);
+	Person viewProfile(String Email);
+	
+	Person logIn(LoginDto data);
+	
+	
 
 
 }
