@@ -5,14 +5,9 @@ import com.model.Person;
 
 public interface AdminstratorMethod {
 	
-    boolean addNewProduct(Product myProduct);  
-	
-    boolean removeProduct(Product myProduct);
-    
-	boolean removePriceQuantity(Double price,int quantity);
-	
-	boolean editPriceQuantity(Double price,int quantity);
-	
-	Person reviewAllProfile();
+    void addNewProduct(Product myProduct);  
+	 void removeProduct(int id);
+	    
+	  void editProduct (int id);
 
 }

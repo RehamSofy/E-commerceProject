@@ -60,6 +60,23 @@ public class UtilClass implements DBIntializer{
  	        }  	 
  	     return resultSet;
   }
+    
+    public void removeQuery(String query){
+ 	   try{
+ 	    	  Connection con = getConnection();
+ 	          preparedStatement = con.prepareStatement(query);
+ 	         
+ 		      preparedStatement.executeUpdate();
+ 	               
+ 	       } catch (SQLException e) {
+ 		          System.out.println("SQLException: - " + e);
+ 		          e.printStackTrace();
+ 	            }	   
+ 	   
+ 	   
+ 	   
+    }
+   
   
    
   
