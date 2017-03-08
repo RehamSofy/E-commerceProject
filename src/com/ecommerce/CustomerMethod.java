@@ -2,6 +2,7 @@ package com.ecommerce;
 
 import java.util.ArrayList;
 import com.model.Contact;
+import com.model.OrderHistory;
 import com.model.Product;
 
 
@@ -17,7 +18,7 @@ public interface CustomerMethod {
 	void updateCredit(int userId,double limit);
 	void updatequantity(ArrayList<Product>products);
 	void SavingProduct(int idProduct);
-	void reviewOrderHistory(int iduser);
+	ArrayList< OrderHistory>reviewOrderHistory(int iduser);
 	void contactUS(Contact con);
 	
 

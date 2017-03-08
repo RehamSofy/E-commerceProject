@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import com.ecommerce.CustomerMethod;
 import com.model.Contact;
+import com.model.OrderHistory;
 import com.model.Product;
 import com.util.UtilClass;
 
@@ -71,11 +72,7 @@ public class CustomerOperations implements CustomerMethod{
 
 	
 
-	@Override
-	public void reviewOrderHistory(int iduser) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void contactUS(Contact con) {
@@ -103,6 +100,36 @@ public class CustomerOperations implements CustomerMethod{
 		String query="update product set saving='"+1+"'where idProduct='"+idProduct+"' ";
 	    uc.updateRecord(query);
 		
+	}
+	@Override
+	public ArrayList<OrderHistory> reviewOrderHistory(int iduser) {
+		  ArrayList<OrderHistory> orders=new ArrayList<OrderHistory>();
+		    UtilClass uc=new UtilClass();
+			ResultSet resultSet=uc.getResultSet("select * from `buyhistory` where fkUser_order= '" + iduser + "'");
+		  
+		    try {
+	    		
+	    	 while(resultSet.next()){
+	    		 
+	    		 OrderHistory ord = new  OrderHistory();
+	    		   ord .setIdOrderHistory(resultSet.getInt("idorderHistory"));
+					ord.setIdUser(resultSet.getInt("fkUser_order"));
+					ord.setIdProductOrder(resultSet.getInt("fkProduct_order"));
+					ord.setQuantity(resultSet.getInt("quantity"));
+					ord.setPrice(resultSet.getDouble("price"));
+					
+					orders.add(ord);
+				}
+	    	 
+	    	   //close connection
+	    	    uc.closeConnection();
+			
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			   
+		return  orders;
 	}
 
 }
