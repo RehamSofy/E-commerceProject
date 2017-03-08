@@ -13,9 +13,10 @@ public interface CustomerMethod {
 	void viewAllProducts(Product product);
 	boolean addToShoppingCart(Product product);
 	boolean removeFromShoppingCart(Product product);
-	boolean buyProduct(String Creditcard,Product product);
-	boolean updateCredit(String Creditcard,double limit);
-	boolean updatequantity(int idPrduct);
+	void updateShopingCard(int userId);
+	void updateCredit(int userId,double limit);
+	void updatequantity(ArrayList<Product>products);
+	void SavingProduct(int idProduct);
 	void reviewOrderHistory(int iduser);
 	void contactUS(Contact con);
 	

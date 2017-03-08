@@ -46,13 +46,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 <!---//End-rate---->
 </head>
+
+
 <body>
+<%
+response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+String userName = (String) session.getAttribute("email");
+String useradmin=(String) session.getAttribute("emailAdmin");
+if (null == userName&&useradmin==null) {
+   request.setAttribute("Error", "Session has ended.  Please login.");
+   RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+   rd.forward(request, response);
+}
+
+%>
 <!--header-->
 <div class="header">
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.html"><img src="images/logo.png" alt=""></a>	
+				<a href="index.jsp"><img src="images/logo.png" alt=""></a>	
 			</div>
 		</div>
 	</div>
@@ -105,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav navbar-nav nav_1">
 		   <li><a class="color" href="index.jsp">Home</a></li>
     		<li class="dropdown mega-dropdown active">
-			    <a class="color1" href="########" class="dropdown-toggle" data-toggle="dropdown">Product<span class="caret"></span></a>				
+			    <a class="color1" href="" class="dropdown-toggle" data-toggle="dropdown">Product<span class="caret"></span></a>				
 				<div class="dropdown-menu ">
                     <div class="menu-top">
 						<div class="col1">
@@ -126,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>                 
 				</div>				
 			</li>
-			<li><a class="color4" href="about.html">About</a></li>
+			<li><a class="color4" href="about.jsp">About</a></li>
             <li><a class="color5" href="contact.jsp">Contact</a></li>
            
 		   <% 
@@ -174,11 +190,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Collect the nav links, forms, and other content for toggling -->
                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                    <ul class="nav navbar-nav nav_1">
-				    <li><a class="color" href="profileServlet"><%=hs.getAttribute("nameAdmin")%></a></li>
+				    <li><a class="color" href="index.jsp">Home</a></li>
 					<li><a class="color1" href="viewAccountServlet">Personal Accounts</a></li>
-					<li><a class="color2" href="">View Products</a></li>
+					<li><a class="color2" href="Viewproduct">View Products</a></li>
 		            <li><a class="color3" href="Addproduct.jsp">Add Product</a></li>
 		            <li ><a class="color4" href="register.html">Add Admin</a></li>
+		            <li><a class="color" href="profileServlet"><%=hs.getAttribute("nameAdmin")%></a></li>
 				     </ul>
 	                  </div><!-- /.navbar-collapse -->
 	                </nav>
@@ -186,7 +203,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				    <div class="col-sm-2 search-right">
 					<ul class="heart">
 					<li>
-					<a href="wishlist.html" >
+					<a href="" >
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 					  Web Site
 					</a>
@@ -235,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<h1>profile</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>profile</h2>
+		<h2><a href="index.jsp">Home</a><label>/</label>profile</h2>
 	</div>
 </div>
 <!--login-->
@@ -248,9 +265,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   <%
                     Person person=(Person)request.getAttribute("data");%>
 				   <tr>
-				   <td><i  class="glyphicon glyphicon-user"></i></td>
+				   <td><i class="glyphicon glyphicon-user"></i></td>
 				   <td>Name</td>
-				   <td><%=person.getFirstName() %><%=person.getLastName() %></td>
+				   <td><%=person.getFirstName() %> <%=person.getLastName() %></td>
 				   </tr>
 				   <tr>
 				   <td><i  class="glyphicon glyphicon-lock"></i></td>
@@ -290,13 +307,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   <tr>
 				   <td><i  class="glyphicon glyphicon-calendar"></i></td>
 				   <td>Birthday</td>
-				   <td><%=person.getBirthday()%></td>
+				   <td><%=person.getBirthday().toLocaleString()%></td>
 				   </tr>
 				   <tr>
 				   <td>
-				   <form action="editProfile.jsp"  method="post" class=" hvr-skew-backward">
-				   <input type="hidden" name="PersonalData" value="<%=person%>" />
-				  <%  request.getSession().setAttribute("list",person);%>
+				   <form action="Editprofile.jsp"   class=" hvr-skew-backward">
+				   
+				  <%  session.setAttribute("List", person);%>
 				   <input type="submit" value="Edit" />
 				   </form>
 				   </td>
@@ -306,19 +323,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				  
 			</div>
+
+			
 			<div class="col-md-6">
 			     <table>
 				 <tr>
-				 <td><a href="Orderhistory.html" class=" hvr-skew-backward">Order History</a></td>
+				 <td><a href="#" class=" hvr-skew-backward">Order History</a></td>
 				 </tr>
 				 <tr>
-				 <td><a href="wish.html" class=" hvr-skew-backward">Wishing order</a></td>
+				 <td><a href="#" class=" hvr-skew-backward">Wishing order</a></td>
 				 </tr>
 				 <tr>
-				 <td><a href="information.html" class=" hvr-skew-backward">&ensp;Personal Info</a></td>
+				 <td><a href="profileServlet" class=" hvr-skew-backward">&ensp;Personal Info</a></td>
 				 </tr>
 				 <tr>
-				 <td><a href="Logout.html" class=" hvr-skew-backward">&ensp;&ensp;&ensp;LogOut&ensp;&ensp;&ensp;</a></td>
+				 <td><a href="LogoutServlet"  class=" hvr-skew-backward">&ensp;&ensp;&ensp;LogOut&ensp;&ensp;&ensp;</a></td>
 				 </tr>
 				 </table>			
 			</div>
@@ -333,15 +352,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="index.html"><img src="images/log.png" alt=""></a>
+						<a href="index.jsp"><img src="images/log.png" alt=""></a>
 						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
 					</div>
 					
 					<div class="col-md-3 footer-middle-in">
 						<h6>Information</h6>
 						<ul class=" in">
-							<li><a href="404.html">About</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="about.jsp">About</a></li>
+							<li><a href="contact.jsp">Contact Us</a></li>
 							<li><a href="login.html">Login</a></li>
 							
 						</ul>

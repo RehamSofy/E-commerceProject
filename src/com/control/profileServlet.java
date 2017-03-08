@@ -50,11 +50,11 @@ public class profileServlet extends HttpServlet {
 		PersonalOperation obj=new PersonalOperation();
 		String email=null;
 		if(hs.getAttribute("email")!=null){
-			System.out.println(hs.getAttribute("email"));
+			//System.out.println(hs.getAttribute("email"));
 			email=(String) hs.getAttribute("email");
 		}
 		else if(hs.getAttribute("emailAdmin")!=null){
-			System.out.println(hs.getAttribute("emailAdmin"));
+			//System.out.println(hs.getAttribute("emailAdmin"));
 			email=(String) hs.getAttribute("emailAdmin");
 			
 		}

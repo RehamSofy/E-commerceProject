@@ -46,6 +46,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!--header-->
+<%
+    response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setDateHeader("Expires", 0);
+    response.setHeader("Pragma","no-cache");
+ 
+     //request.getAttribute("username");
+            if(session.getAttribute("email")== null&&session.getAttribute("emailAdmin")==null){
+                session.setAttribute("email", null);
+                session.setAttribute("emailAdmin",null);
+                out.print("you have already been logged out <a href=\"login.html\">Back to Login<a/>");
+            }
+            
+    
+%>
+
 <div class="header">
 <div class="container">
 		<div class="head">
@@ -95,7 +111,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    </div> 
    
     <%
-             HttpSession hs=request.getSession();
+              HttpSession hs=request.getSession();
+		      int userid=(Integer)hs.getAttribute("iduser");
 		   if(hs.getAttribute("emailAdmin")==null){%>
 		   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
             <ul class="nav navbar-nav nav_1">
@@ -108,12 +125,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="h_nav">
 								<h4>Category</h4>
 									<ul>
-										<li><a href="product.html">dress</a></li>
-										<li><a href="product.html">Bags</a></li>
-										<li><a href="product.html">Caps</a></li>
-										<li><a href="product.html">Hoodies</a></li>
-                                        <li><a href="product.html">vest</a></li>
-										<li><a href="product.html">shoses</a></li>										
+										<li><a href="productOfcategory">dress</a></li>
+										<li><a href="productOfcategory">Bags</a></li>
+										<li><a href="productOfcategory">Caps</a></li>
+										<li><a href="productOfcategory">Hoodies</a></li>
+                                        <li><a href="productOfcategory">vest</a></li>
+										<li><a href="productOfcategory">shoses</a></li>										
 									</ul>	
 							</div>							
 						</div>
@@ -122,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>                 
 				</div>				
 			</li>
-			<li><a class="color4" href="about.html">About</a></li>
+			<li><a class="color4" href="about.jsp">About</a></li>
             <li><a class="color5" href="contact.jsp">Contact</a></li>
            
 		   <% 
@@ -140,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 					<div class="cart box_1">
 					<%if(hs.getAttribute("email")!=null){ %>
-						<a href="checkout.html">
+						<a href="checkout.jsp">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span></div>
 							<img src="images/cart.png" alt=""/></h3>
@@ -170,11 +187,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Collect the nav links, forms, and other content for toggling -->
                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                    <ul class="nav navbar-nav nav_1">
-				    <li><a class="color" href="profileServlet"><%=hs.getAttribute("nameAdmin")%></a></li>
+                   <li><a class="color" href="index.jsp">Home</a></li>
 					<li><a class="color1" href="viewAccountServlet">Personal Accounts</a></li>
-					<li><a class="color2" href="">View Products</a></li>
+					<li><a class="color2" href="Viewproduct">View Products</a></li>
 		            <li><a class="color3" href="Addproduct.jsp">Add Product</a></li>
 		            <li ><a class="color4" href="register.html">Add Admin</a></li>
+		            <li><a class="color" href="profileServlet"><%=hs.getAttribute("nameAdmin")%></a></li>
 				     </ul>
 	                  </div><!-- /.navbar-collapse -->
 	                </nav>
@@ -182,7 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				    <div class="col-sm-2 search-right">
 					<ul class="heart">
 					<li>
-					<a href="wishlist.html" >
+					<a href="LogoutServlet" >
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 					  Web Site
 					</a>
@@ -273,7 +291,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div></a>
 						</div>
 						<div class="col-3">
-							<a href="single.html"><img src="images/pi2.jpg" class="img-responsive" alt="">
+							<a href="single.jsp"><img src="images/pi2.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
@@ -281,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div></a>
 						</div>
 						<div class="col-3">
-							<a href="single.html"><img src="images/pi3.jpg" class="img-responsive" alt="">
+							<a href="single.jsp"><img src="images/pi3.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
@@ -349,8 +367,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-3 footer-middle-in">
 						<h6>Information</h6>
 						<ul class=" in">
-							<li><a href="404.html">About</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="about.jsp">About</a></li>
+							<li><a href="contact.jsp">Contact Us</a></li>
 							<li><a href="login.html">Login</a></li>
 						</ul>
 						<div class="clearfix"></div>
@@ -397,7 +415,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('a.picture').Chocolat();
 		});
 		</script>
-
-
 </body>
 </html>

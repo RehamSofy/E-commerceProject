@@ -4,7 +4,6 @@ package com.control;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import com.ecommerce.CustomerMethod;
 import com.model.Contact;
 import com.model.Product;
@@ -18,7 +17,6 @@ public class CustomerOperations implements CustomerMethod{
 		
 		
 	}
-
 	@Override
 	public ArrayList<Product> searchProducts(String searchType)  {
 		
@@ -35,7 +33,6 @@ public class CustomerOperations implements CustomerMethod{
 					obj.setProductName(resultSet.getString("Name"));
 					obj.setQuantity(resultSet.getInt("Quantity"));
 					obj.setProductCategory(resultSet.getString("CategoryName"));
-					//obj.setImage(resultSet.getBlob("Image"));
 					products.add(obj);	
 				}
 	    	 
@@ -65,23 +62,14 @@ public class CustomerOperations implements CustomerMethod{
 		return false;
 	}
 
-	@Override
-	public boolean buyProduct(String Creditcard, Product product) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
-	public boolean updateCredit(String Creditcard, double limit) {
-		// TODO Auto-generated method stub
-		return false;
+	public void updateCredit(int userId, double limit) {
+		String query="update person set Credit_limit=Credit_limit-'"+limit+"'where idUser='"+userId+"' ";
+	    uc.updateRecord(query);
 	}
 
-	@Override
-	public boolean updatequantity(int idPrduct) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public void reviewOrderHistory(int iduser) {
@@ -92,6 +80,28 @@ public class CustomerOperations implements CustomerMethod{
 	@Override
 	public void contactUS(Contact con) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void updateShopingCard(int userId) {
+		// TODO Auto-generated method stub
+		String query="delete from  shoppingcard  where fkUser='" + userId + "'and saving='"+0+"'";
+		uc.DeleteRecord(query);	
+		
+	}
+	@Override
+	public void updatequantity(ArrayList<Product> products) {
+		for(int i=0;i<products.size();++i){
+		String query="update product set Quantity=Quantity-'"+products.get(i).getQuantity()+"'where idProduct='"+products.get(i).getId()+"' ";
+	    uc.updateRecord(query);
+		}
+		
+	}
+	@Override
+	public void SavingProduct(int idProduct) {
+		String query="update product set saving='"+1+"'where idProduct='"+idProduct+"' ";
+	    uc.updateRecord(query);
 		
 	}
 

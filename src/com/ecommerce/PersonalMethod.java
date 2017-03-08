@@ -8,7 +8,7 @@ public interface PersonalMethod {
 	
     boolean register(Person data);
 	
-	boolean editProfile(Person data);
+	void editProfile(Person data);
 	
 	Person viewProfile(String Email);
 	

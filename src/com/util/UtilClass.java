@@ -67,7 +67,6 @@ public class UtilClass implements DBIntializer{
  	        }  	 
  	     return resultSet;
   }
-<<<<<<< HEAD
     public void runInsertQuery(String query,Object data) {  
    	 
 	    try{
@@ -89,6 +88,8 @@ public class UtilClass implements DBIntializer{
 	            preparedStatement.setString(9,((Person) data).getPhoneNumber());
 	            preparedStatement.setString(10,((Person) data).getCreditNumber());
 	            Date sqlDate = new java.sql.Date(((Person) data).getBirthday().getTime());
+	            
+	            
 	            preparedStatement.setDate(11,sqlDate);
 	            
 	            
@@ -115,55 +116,26 @@ public class UtilClass implements DBIntializer{
              Logger.getLogger(Product.class.getName()).log(Level.SEVERE, null, ex);
          }	
     }
-=======
     
     public void removeQuery(String query){
  	   try{
  	    	  Connection con = getConnection();
  	          preparedStatement = con.prepareStatement(query);
- 	         
  		      preparedStatement.executeUpdate();
  	               
  	       } catch (SQLException e) {
  		          System.out.println("SQLException: - " + e);
  		          e.printStackTrace();
- 	            }	   
- 	   
- 	   
- 	   
+ 	            }	      
     }
-   
-  
->>>>>>> 85540a458e246683518df3b78a8e66e7f57f4689
-   
-  /*public int generateId(String query){
-	  
-	  Connection con = getConnection();
-       try {
-		statement = con.createStatement();
-		resultSet = statement.executeQuery(query);
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	try {
-		return resultSet.getInt(1);
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	return 0;
-       
-	  
-  }*/
+
    
   public void DeleteRecord(String query){
 	  
 	  Connection con = getConnection();
 	  try {
-		    statement = con.createStatement();
-		    statement.executeUpdate(query);
+	          preparedStatement = con.prepareStatement(query);
+		      preparedStatement.executeUpdate();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

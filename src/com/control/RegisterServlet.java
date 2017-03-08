@@ -5,12 +5,15 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.Person;
 
@@ -71,16 +74,16 @@ public class RegisterServlet extends HttpServlet {
 		try {
 		        date = format.parse(birthday);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//status 
-		//if session open 
-		//and user and password is admin
-		//status is false
-		//else status is true
-		System.out.println(date);
-		int iscustomer=1;
+		int iscustomer=-1;
+		HttpSession hs=request.getSession();
+		   if(hs.getAttribute("emailAdmin")!=null){
+			   iscustomer=0;
+		   }
+		   else{
+			   iscustomer=1;
+		   }
 		Person person1=new Person();
 		person1.setFirstName(firstname);
 		person1.setLastName(lastname);
@@ -93,12 +96,18 @@ public class RegisterServlet extends HttpServlet {
 		person1.setCreditLimit(Double.parseDouble(creditLimit));
 		person1.setCreditNumber(creditNumber);
 		person1.setIsCustomer(iscustomer);
-		
 		//register function
 		PersonalOperation p_operation=new PersonalOperation();
 		p_operation.register(person1);
 		
-		
+		//forword to log in
+		if( iscustomer==1){
+		RequestDispatcher req =	request.getRequestDispatcher("login.html");
+		req.forward(request, response);}
+		else if(iscustomer==0){
+			RequestDispatcher req =	request.getRequestDispatcher("index.jsp");
+			req.forward(request, response);
+		}
 		
 		
 	}

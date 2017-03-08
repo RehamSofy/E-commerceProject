@@ -45,19 +45,15 @@ public class removeAccountServelt extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		doPost(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String id=request.getParameter("product_no");
-		 //String index=request.getParameter("index");
-		//String list=request.getParameter("list");
-		//ArrayList<String> myList = new ArrayList<String>(Arrays.asList(list.split(",")));
-		//ArrayList<Object> objectList = new ArrayList<Object>(myList);
-		//ArrayList<Person>x=new ArrayList<Person>();	
+		 String id=request.getParameter("product_no");	
 		//function remove
 		AdminstratorOperations obj=new AdminstratorOperations();
 		obj.removeProfile(Integer.parseInt(id));

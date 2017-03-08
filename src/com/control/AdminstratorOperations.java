@@ -14,7 +14,7 @@ import com.util.UtilClass;
 public class AdminstratorOperations implements AdminstratorMethod{
 
 	UtilClass uc=new UtilClass();
-	ArrayList<Product> pro = new  ArrayList<Product>();
+	 ArrayList<Product> pro = new  ArrayList<Product>();
 	 ArrayList<Product> produc = new  ArrayList<Product>();
 	@Override
 	public void addNewProduct(Product myProduct) {
@@ -25,18 +25,17 @@ public class AdminstratorOperations implements AdminstratorMethod{
 	}
 
 	@Override
-	public boolean removeProduct(int id) {
+	public void removeProduct(int id) {
 		
 		String query ="delete from  product  where idProduct='" + id + "'";
 		uc.DeleteRecord(query);
-		return false;
+		
 	}
 
 
 
 	@Override
 	public void removeProfile(int id) {
-		
 		
 		String sql = "DELETE FROM person WHERE idUser='" +id+"'";
 		uc.DeleteRecord(sql);
@@ -46,9 +45,8 @@ public class AdminstratorOperations implements AdminstratorMethod{
 	@Override
 	public ArrayList<Person> viewAccounts() {
 		
-		 ArrayList<Person> persons=new ArrayList<Person>();
-		    UtilClass uc=new UtilClass();
-			ResultSet resultSet=uc.getResultSet("select * from person");
+		ArrayList<Person> persons=new ArrayList<Person>();	    
+		ResultSet resultSet=uc.getResultSet("select * from person");
 		  
 		    try {
 	    		
@@ -142,5 +140,11 @@ public ArrayList<String> viewCategory () {
 		return catname ;
 		
 	}
+
+@Override
+public void editProduct(int id) {
+	// TODO Auto-generated method stub
+	
+}
 
 }

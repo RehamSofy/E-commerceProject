@@ -64,12 +64,14 @@ public class SignInServlet extends HttpServlet {
 		person=po.logIn(obj);	
 		int flag=person.getIsCustomer();
 		String name=person.getFirstName();
+		int id=person.getId();
 		
 		//admin account
 		if(flag==0){
 			HttpSession session = request.getSession(true);
 			session.setAttribute("emailAdmin",email);
 			session.setAttribute("nameAdmin",name);
+			session.setAttribute("iduser",id);
 	    	RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
 		    rd.forward(request,response);
 			
@@ -79,6 +81,7 @@ public class SignInServlet extends HttpServlet {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("email",email);
 			session.setAttribute("name",name);
+			session.setAttribute("iduser",id);
 	    	RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
 	    	rd.forward(request,response);
 			

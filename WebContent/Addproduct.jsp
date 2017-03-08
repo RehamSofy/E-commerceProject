@@ -1,25 +1,17 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<%@page import="com.controller.Admin"%>
 
-
+<%@page import="com.control.AdminstratorOperations"%>
 <%@ page import="java.util.ArrayList" %>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN” “http://www.w3.org/TR/html4/loose.dtd"&gt;>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
+<title>Add Product</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shopin Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndroId Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -59,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.html"><img src="images/logo.png" alt=""></a>	
+				<a href="index.jsp"><img src="images/logo.png" alt=""></a>	
 			</div>
 		</div>
 	</div>
@@ -69,7 +61,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul >
 						<li><a href="login.html">Login</a></li>
 						<li><a href="register.html">Register</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
 					</ul>
 				</div>
 				
@@ -104,184 +95,121 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </button>
      
    </div> 
-   <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-        <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="index.html">Home</a></li>
-            
-    	<li class="dropdown mega-dropdown active">
-			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
-				<div class="dropdown-menu">
+   <%
+             HttpSession hs=request.getSession();
+		   if(hs.getAttribute("emailAdmin")==null){%>
+		   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav nav_1">
+		   <li><a class="color" href="index.jsp">Home</a></li>
+    		<li class="dropdown mega-dropdown active">
+			    <a class="color1" href="" class="dropdown-toggle" data-toggle="dropdown">Product<span class="caret"></span></a>				
+				<div class="dropdown-menu ">
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu1</h4>
+								<h4>Category</h4>
 									<ul>
-										<li><a href="product.html">Accessories</a></li>
+										<li><a href="product.html">dress</a></li>
 										<li><a href="product.html">Bags</a></li>
-										<li><a href="product.html">Caps & Hats</a></li>
-										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
-										
+										<li><a href="product.html">Caps</a></li>
+										<li><a href="product.html">Hoodies</a></li>
+                                        <li><a href="product.html">vest</a></li>
+										<li><a href="product.html">shoses</a></li>										
 									</ul>	
 							</div>							
 						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu2</h4>
-								<ul>
-										<li><a href="product.html">Jackets & Coats</a></li>
-										<li><a href="product.html">Jeans</a></li>
-										<li><a href="product.html">Jewellery</a></li>
-										<li><a href="product.html">Jumpers & Cardigans</a></li>
-										<li><a href="product.html">Leather Jackets</a></li>
-										<li><a href="product.html">Long Sleeve T-Shirts</a></li>
-									</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu3</h4>
-									<ul>
-										<li><a href="product.html">Shirts</a></li>
-										<li><a href="product.html">Shoes, Boots & Trainers</a></li>
-										<li><a href="product.html">Sunglasses</a></li>
-										<li><a href="product.html">Sweatpants</a></li>
-										<li><a href="product.html">Swimwear</a></li>
-										<li><a href="product.html">Trousers & Chinos</a></li>
-										
-									</ul>	
-								
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu4</h4>
-								<ul>
-									<li><a href="product.html">T-Shirts</a></li>
-									<li><a href="product.html">Underwear & Socks</a></li>
-									<li><a href="product.html">Vests</a></li>
-									<li><a href="product.html">Jackets & Coats</a></li>
-									<li><a href="product.html">Jeans</a></li>
-									<li><a href="product.html">Jewellery</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1 col5">
-						<img src="images/me.png" class="img-responsive" alt="">
-						</div>
+						
 						<div class="clearfix"></div>
-					</div>                  
+					</div>                 
 				</div>				
 			</li>
-			<li class="dropdown mega-dropdown active">
-			    <a class="color2" href="#" class="dropdown-toggle" data-toggle="dropdown">Men<span class="caret"></span></a>				
-				<div class="dropdown-menu mega-dropdown-menu">
-                    <div class="menu-top">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu1</h4>
-									<ul>
-										<li><a href="product.html">Accessories</a></li>
-										<li><a href="product.html">Bags</a></li>
-										<li><a href="product.html">Caps & Hats</a></li>
-										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
-										
-									</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu2</h4>
-								<ul>
-										<li><a href="product.html">Jackets & Coats</a></li>
-										<li><a href="product.html">Jeans</a></li>
-										<li><a href="product.html">Jewellery</a></li>
-										<li><a href="product.html">Jumpers & Cardigans</a></li>
-										<li><a href="product.html">Leather Jackets</a></li>
-										<li><a href="product.html">Long Sleeve T-Shirts</a></li>
-									</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu3</h4>
-								
-<ul>
-										<li><a href="product.html">Shirts</a></li>
-										<li><a href="product.html">Shoes, Boots & Trainers</a></li>
-										<li><a href="product.html">Sunglasses</a></li>
-										<li><a href="product.html">Sweatpants</a></li>
-										<li><a href="product.html">Swimwear</a></li>
-										<li><a href="product.html">Trousers & Chinos</a></li>
-										
-									</ul>	
-								
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Submenu4</h4>
-								<ul>
-									<li><a href="product.html">T-Shirts</a></li>
-									<li><a href="product.html">Underwear & Socks</a></li>
-									<li><a href="product.html">Vests</a></li>
-									<li><a href="product.html">Jackets & Coats</a></li>
-									<li><a href="product.html">Jeans</a></li>
-									<li><a href="product.html">Jewellery</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1 col5">
-						<img src="images/me1.png" class="img-responsive" alt="">
-						</div>
-						<div class="clearfix"></div>
-					</div>                  
-				</div>				
-			</li>
-			<li><a class="color3" href="product.html">Sale</a></li>
-			<li><a class="color4" href="404.html">About</a></li>
-            <li><a class="color5" href="typo.html">Short Codes</a></li>
-            <li ><a class="color6" href="contact.html">Contact</a></li>
-        </ul>
-     </div><!-- /.navbar-collapse -->
-
-</nav>
-			</div>
-			<div class="col-sm-2 search-right">
+			<li><a class="color4" href="about.jsp">About</a></li>
+            <li><a class="color5" href="contact.jsp">Contact</a></li>
+           
+		   <% 
+		   if(hs.getAttribute("email")!=null){
+		   %>
+		     <li><a class="color6" href="profileServlet"><%=hs.getAttribute("name")%></a></li>
+		  <%}%>
+		      </ul>
+		     </div><!-- /.navbar-collapse -->
+              </nav>
+              </div>
+		   <div class="col-sm-2 search-right">
 				<ul class="heart">
-				<li>
-				<a href="wishlist.html" >
-				<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-				</a></li>
 				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
 					</ul>
 					<div class="cart box_1">
+					<%if(hs.getAttribute("email")!=null){ %>
 						<a href="checkout.html">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span></div>
 							<img src="images/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
+						<p><a href="javascript:;" class="simpleCart_empty">My Cart</a></p>
+                     <%} %>
 					</div>
 					<div class="clearfix"> </div>
-					
 						<!----->
-
 						<!---pop-up-box---->					  
 			<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
 			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
 			<div id="small-dialog" class="mfp-hide">
-				<div class="login-search">
-					<div class="login">
+				<div class="search-top">
+					<div class="login-search">
+					<form action="SearchingServlet" method="post">
+						<input type="submit" value="">
+						<input type="text" name="searching" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
+					</form>
+					</div>
+					<p>Shopin</p>
+				</div>				
+			</div>
+		  <%}%>   
+			<% if(hs.getAttribute("emailAdmin")!=null){%>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+                   <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                   <ul class="nav navbar-nav nav_1">
+                   <li><a class="color" href="index.jsp">Home</a></li>
+					<li><a class="color1" href="viewAccountServlet">Personal Accounts</a></li>
+					<li><a class="color2" href="Viewproduct">View Products</a></li>
+		            <li><a class="color3" href="Addproduct.jsp">Add Product</a></li>
+		            <li ><a class="color4" href="register.html">Add Admin</a></li>
+		            <li><a class="color" href="profileServlet"><%=hs.getAttribute("nameAdmin")%></a></li>
+				     </ul>
+	                  </div><!-- /.navbar-collapse -->
+	                </nav>
+	                </div>
+				    <div class="col-sm-2 search-right">
+					<ul class="heart">
+					<li>
+					<a href="index.jsp" >
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+					  Web Site
+					</a>
+					<a href="LogoutServlet"><i class="glyphicon glyphicon-user"></i>Log Out</a>
+					</li>	
+					</ul>
+				    <div class="clearfix"> </div>
+				    </div> 
+				    <!---pop-up-box---->					  
+			<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!---//pop-up-box---->
+			<div id="small-dialog" class="mfp-hide">
+				<div class="search-top">
+					<div class="login-search">
 						<input type="submit" value="">
 						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
 					</div>
 					<p>Shopin</p>
 				</div>				
 			</div>
-		 <script>
+		 
+				    <%} %> 	    				
+						<!----->
+			<script>
 			$(document).ready(function() {
 			$('.popup-with-zoom-anim').magnificPopup({
 			type: 'inline',
@@ -293,87 +221,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			midClick: true,
 			removalDelay: 300,
 			mainClass: 'my-mfp-zoom-in'
+			});																					
 			});
-																						
-			});
-		</script>		
-						<!----->
+		   </script>
 			</div>
 			<div class="clearfix"></div>
 		</div>	
 	</div>	
-</div>
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
 		<h1>Add product</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label> Add product </h2>
+		<h2><a href="index.jsp">Home</a><label>/</label> Add product </h2>
 	</div>
-	<%!ArrayList <String> cat = new ArrayList <String>() ; %>
-	<%Admin admin = new Admin(); %>
-	<%  cat = admin.viewCategory(); %>
+</div>
 
-<!--login-->
+	<%!ArrayList <String> cat = new ArrayList <String>() ; %>
+	<%AdminstratorOperations admin = new AdminstratorOperations(); %>
+	<% cat = admin.viewCategory(); %>
 <div class="container">
 		<div class="login">
-			<form  action = "AddproductServlet">
+			<form  action = "AddproductServlet"  method="post"  enctype="multipart/form-data">
 			<div class="col-md-6 login-do">
-			<div class="login-mail">
-					<input type="text" placeholder="ID" required="" name= "id">
-					<!-- <i  class="glyphicon glyphicon-user"></i> -->
+				<div class="login-mail">
+					<input type="text" placeholder="Name"   name ="name">		
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Name" required="" name ="name">
-					<!-- <i  class="glyphicon glyphicon-phone"></i> -->
+					<input type="text" placeholder="Price"   name="price">
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Price" required="" name="price">
-					<!--  <i  class="glyphicon glyphicon-envelope"></i>-->
+					<input type="text" placeholder="Quantity"  name = "quantity">
+					
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Quantity" required="" name = "quantity">
-					<!-- <i class="glyphicon glyphicon-lock"></i> -->
-				</div>
-				
-						
+			       <input type="file" name="photo" id="photo" size="50"/>
+		       </div>	
+				<div class="login-mail">
 					<select name="category">
-					<option selected="true" disabled="true"> Category </option>
 					<%
-					for(int i =0; i<cat.size();i++ ){
-						
-						%>
-						<option> <%= cat.get(i) %></option>
-						
+					for(int i =0; i<cat.size();i++ ){		
+				     %>
+						<option> <%= cat.get(i) %></option>			
 					<%}
 					
 					%>
-					
-					
-					</select>
-					
-					
-					</div>
-				<!--   <a class="news-letter " href="#">
-						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-					   </a>  --> 
+					</select>		
+				</div>
 				<label class="hvr-skew-backward">
-					<input type="submit" value="Submit">
+					<input type="Submit" value="Submit" name="Submit" id="Submit">
 				</label>
-			
-			</div>
-			
+				</div>
+				<div class="col-md-6 login-right">
+				 
+
+			   </div>
+				<div class="clearfix"> </div>		
 		</form>
-			
-			<!--  <div class="clearfix"> </div>-->
-			
+		
 		</div>
-
+			 
 </div>
-
-<!--//login-->
-
-		<!--brand-->
+<!--brand-->
 		<div class="container">
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
@@ -390,8 +299,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			</div>
-			<!--//brand-->
+		</div>
+<!--//brand-->
 	
 	<!--//content-->
 		<!--//footer-->
@@ -406,14 +315,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-3 footer-middle-in">
 						<h6>Information</h6>
 						<ul class=" in">
-							<li><a href="404.html">About</a></li>
+							<li><a href="about.html">About</a></li>
 							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-						</ul>
-						<ul class="in in1">
-							<li><a href="#">Order History</a></li>
-							<li><a href="wishlist.html">Wish List</a></li>
 							<li><a href="login.html">Login</a></li>
 						</ul>
 						<div class="clearfix"></div>
@@ -429,14 +332,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="#">Amet</a></li>
 							<li><a href="#">Omnis</a></li>
 						</ul>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Newsletter</h6>
-						<span>Sign up for News Letter</span>
-							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Subscribe">	
-							</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

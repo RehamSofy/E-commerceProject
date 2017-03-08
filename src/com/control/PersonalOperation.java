@@ -1,5 +1,6 @@
 package com.control;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,21 +24,27 @@ public class PersonalOperation implements PersonalMethod{
 	}
 
 	@Override
-	public boolean editProfile(Person data) {
+	public void editProfile(Person data) {
 		
-		return false;
+		Date sqlDate = new java.sql.Date(((Person) data).getBirthday().getTime());
+		String query="update person set Fname='" + data.getFirstName() + "' ,  Lname='" + data.getLastName() + "', Password='" + data.getPassword() + "', Job='"+data.getJob()+"', Email='"+data.getEmail()
+		+"' ,Credit_limit='"+data.getCreditLimit()+"' , Address='"+data.getAddress()+"' , PhoneNumber='"+data.getPhoneNumber()+"' , CreditNumber='"+
+				data.getCreditNumber()+"' , Birthday='"+sqlDate+"'where idUser='"+data.getId()+"'";
+		uc.updateRecord(query);
+		
 	}
 
 	@Override
 	public Person logIn(LoginDto data) {
 		
 		Person person=new Person();
-		ResultSet rs=uc.getResultSet("select Fname,Status from person where Email='"+data.getEmail()+"'AND Password='"+data.getPassword()+"'");
+		ResultSet rs=uc.getResultSet("select Fname,Status,idUser from person where Email='"+data.getEmail()+"'AND Password='"+data.getPassword()+"'");
 		try {
 			if(rs.next()){
 				//valid account
 				person.setIsCustomer(rs.getInt("Status"));
 				person.setFirstName(rs.getString("Fname"));	
+				person.setId(rs.getInt("idUser"));
 			}
 			else{
 				//not valid
@@ -56,6 +63,7 @@ public class PersonalOperation implements PersonalMethod{
 		try {
 			if(rs.next()){
 				//valid account
+				person.setId(rs.getInt("idUser"));
 				person.setFirstName(rs.getString("Fname"));
 				person.setLastName(rs.getString("Lname"));
 				person.setPassword(rs.getString("Password"));
