@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import com.ecommerce.CustomerMethod;
+import com.model.CategoryProduct;
 import com.model.Contact;
 import com.model.OrderHistory;
 import com.model.Product;

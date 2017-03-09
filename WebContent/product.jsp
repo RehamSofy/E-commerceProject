@@ -1,3 +1,6 @@
+
+<%@page import="com.model.CategoryProduct"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>

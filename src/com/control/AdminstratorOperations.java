@@ -122,9 +122,7 @@ public ArrayList<String> viewCategory () {
 			while(catset.next()){
 				
 				String s = catset.getString("idCategoryname");
-				catname.add(s);
-				
-				
+				catname.add(s);			
 				
 			}
 		} catch (SQLException e) {

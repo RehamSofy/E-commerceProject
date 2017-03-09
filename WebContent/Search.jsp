@@ -261,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="women">
 						<div class="women-top">
 							<span><%=products.get(i).getProductCategory()%></span>
-							<h6><a href="single.html"><%=products.get(i).getProductName()%></a></h6>
+							<h6><a href="##"><%=products.get(i).getProductName()%></a></h6>
 							</div>
 							<div class="img item_add">
 								<a href=""><img src="images/ca.png" alt=""></a>

@@ -1,6 +1,7 @@
 package com.ecommerce;
 
 import java.util.ArrayList;
+import com.model.CategoryProduct;
 import com.model.Contact;
 import com.model.OrderHistory;
 import com.model.Product;
