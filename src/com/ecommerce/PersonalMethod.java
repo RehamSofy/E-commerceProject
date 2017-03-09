@@ -12,8 +12,9 @@ public interface PersonalMethod {
 	
 	Person viewProfile(String Email);
 	
-	Person logIn(LoginDto data);
+	Person logIn2(LoginDto data);
 	
+	boolean logIn(LoginDto data);
 	
 
 

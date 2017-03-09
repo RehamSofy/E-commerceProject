@@ -35,7 +35,7 @@ public class PersonalOperation implements PersonalMethod{
 	}
 
 	@Override
-	public Person logIn(LoginDto data) {
+	public Person logIn2(LoginDto data) {
 		
 		Person person=new Person();
 		ResultSet rs=uc.getResultSet("select Fname,Status,idUser from person where Email='"+data.getEmail()+"'AND Password='"+data.getPassword()+"'");
@@ -87,5 +87,25 @@ public class PersonalOperation implements PersonalMethod{
 		
 		
 	}
+	public boolean logIn(LoginDto data) {
+		 data=new LoginDto();
+		UtilClass db=new UtilClass();
+		ResultSet rs=db.getResultSet("select Status from person where Email='"+data.getEmail()+"'AND Password='"+data.getPassword()+"'");
+      
+      try {
+       if(rs.next()){
+       	data.setEmail(rs.getString("email"));
+       	data.setPassword(rs.getString("password"));
+       	
+       	return true ;
+       } else 
+       	return false;
+       
+	}catch(SQLException exp){
+       
+		return false;
+	}
+      }
+
 
 }

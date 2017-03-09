@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.model.LoginDto;
 import com.model.Person;
 import com.model.Product;
 
@@ -153,5 +154,20 @@ public class UtilClass implements DBIntializer{
 	  
   }
     
-
+  public  int resetPassword(LoginDto data,String sql){
+  	int i=0;
+  	Connection con = getConnection();
+  	
+  	try{
+  		PreparedStatement ps=con.prepareStatement(sql);
+  		ps.setString(1, data.getPassword());
+  		ps.setString(2, data.getEmail());
+  		i=ps.executeUpdate();
+  		
+  	}catch(SQLException e){
+  		e.printStackTrace();
+  	}
+  	
+  	return i;
+  }
 }
